@@ -1,8 +1,8 @@
-import { useCount } from "@/context/CountContext";
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { CountContext } from "@/context/CountContext";
 
 const CounterApp: React.FC = () => {
-  const { count, increment, decrement } = useCount();
+  const { count, increment, decrement } = useContext(CountContext);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
