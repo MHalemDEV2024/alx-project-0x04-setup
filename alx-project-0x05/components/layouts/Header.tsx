@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Button from "../common/Button";
 import { usePathname } from "next/navigation";
-import { useCount } from "@/context/CountContext";
+import { useContext } from "react";
+import { CountContext } from "@/context/CountContext";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
-  const { count } = useCount();
+  const { count } = useContext(CountContext);
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
